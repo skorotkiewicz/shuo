@@ -59,14 +59,22 @@ shuo/
 
 Requires Python 3.9+, [ngrok](https://ngrok.com/), and API keys for Twilio, Deepgram, OpenAI, and ElevenLabs.
 
+Configure your [ngrok authentication token](https://dashboard.ngrok.com/get-started/your-authtoken):
+```bash
+ngrok config add-authtoken <YOUR_NGROK_AUTH_TOKEN>
+```
+
+
 ```bash
 pip install -r requirements.txt
 cp .env.example .env   # fill in your keys
 ngrok http 3040        # in another terminal
-python main.py +1234567890
+python main.py +1234567890  # Replace with the phone number the code will call
 ```
 
 ## Tests
+Running these tests is not required for executing the application.
+It is recommended to run tests after making changes to the codebase.
 
 ```bash
 python -m pytest tests/ -v   # runs in ~0.03s
